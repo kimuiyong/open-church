@@ -1,1 +1,71 @@
-
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>열린강당 | 원로목사 예배당</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#071426;color:#f7f4ed;font-family:Arial,"Malgun Gothic",sans-serif;line-height:1.8}
+header{padding:18px 20px;background:#0d2038;border-bottom:1px solid #344862;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{font-size:20px;font-weight:800;color:#f4d393}
+a{color:#f4d393;text-decoration:none}
+main{max-width:850px;margin:auto;padding:22px 16px 60px}
+.hero{text-align:center;padding:45px 20px;background:linear-gradient(150deg,#193653,#081322);border:1px solid #4a5670;border-radius:24px}
+.cross{font-size:68px;color:#e8c67f}
+h1{font-size:32px;margin:10px 0}
+.subtitle{color:#cbd5e1}
+.pastor{margin:25px auto 10px;width:170px;height:170px;border-radius:50%;background:linear-gradient(#a4aab6,#40506b);border:5px solid #e8c67f;display:flex;align-items:center;justify-content:center;font-size:85px}
+.card{background:#11263e;border:1px solid #354c65;border-radius:20px;padding:24px;margin-top:22px}
+h2{color:#f4d393;margin-top:0}
+.verse{font-size:20px;font-weight:bold}
+button{background:#1768d9;color:white;border:0;border-radius:12px;padding:15px 22px;font-size:17px;font-weight:bold;cursor:pointer;margin:6px 5px 6px 0}
+.secondary{background:#30465e}
+.notice{font-size:13px;color:#bac8d8}
+footer{text-align:center;color:#9fb0c6;padding:25px}
+</style>
+</head>
+<body>
+<header><div class="logo">✝ 열린강당<br><small>OPEN CHURCH</small></div><a href="index.html">← 홈으로</a></header>
+<main>
+<section class="hero">
+<div class="cross">✝</div>
+<h1>은혜와 평안의 예배당</h1>
+<p class="subtitle">언제 어디서나 말씀과 함께하는 공간</p>
+<div class="pastor" aria-label="원로 AI 목사 임시 이미지">👨🏻‍🦳</div>
+<h2>원로 AI 목사</h2>
+<p>지혜롭고 따뜻한 말씀으로 여러분과 함께하겠습니다.</p>
+<p class="notice">이 목사는 실제 인물이 아닌 AI 목사 콘셉트입니다. 현재는 시범 설교를 제공합니다.</p>
+</section>
+<section class="card">
+<h2>📖 오늘의 말씀</h2>
+<p class="verse">“항상 기뻐하라 쉬지 말고 기도하라 범사에 감사하라”</p>
+<p>데살로니가전서 5장 16~18절 (일부 발췌, 개역한글)</p>
+</section>
+<section class="card">
+<h2>🎙 원로 목사의 시범 설교</h2>
+<h3>오늘을 살아갈 용기</h3>
+<p id="sermon">사랑하는 여러분, 우리의 삶에는 기쁜 날도 있고 마음이 무거운 날도 있습니다. 성경은 우리에게 항상 기뻐하고, 쉬지 말고 기도하며, 모든 일에 감사하라고 가르칩니다. 이것은 슬픔을 억지로 감추라는 뜻이 아닙니다. 어려운 순간에도 소망을 잃지 않고, 오늘 내가 할 수 있는 작은 선을 선택하라는 초대입니다. 오늘 누군가에게 따뜻한 말 한마디를 건네 보십시오. 그 작은 사랑이 우리의 하루를 바꿀 수 있습니다. 여러분의 삶에 평안이 함께하기를 바랍니다.</p>
+<button onclick="speak()">▶ 설교 듣기</button>
+<button class="secondary" onclick="stopSpeech()">■ 음성 중지</button>
+<p class="notice">음성은 휴대폰 브라우저의 읽기 기능을 사용합니다. 기기마다 목소리가 다를 수 있습니다.</p>
+</section>
+<section class="card">
+<h2>🙏 열린강당의 약속</h2>
+<p>누구나 환영합니다. 회원가입이나 헌금 없이 자유롭게 말씀을 읽고 들을 수 있습니다.</p>
+<p class="notice">실시간 AI 설교 생성, 사실적인 목사 영상, 다국어 방송은 향후 개발 예정입니다.</p>
+</section>
+</main>
+<footer>열린강당 OPEN CHURCH · 모든 이에게 열린 공간</footer>
+<script>
+function speak(){
+if(!('speechSynthesis' in window)){alert('이 브라우저에서는 음성 재생을 지원하지 않습니다.');return;}
+speechSynthesis.cancel();
+const u=new SpeechSynthesisUtterance(document.getElementById('sermon').textContent);
+u.lang='ko-KR';u.rate=0.88;u.pitch=0.85;
+speechSynthesis.speak(u);
+}
+function stopSpeech(){if('speechSynthesis' in window)speechSynthesis.cancel();}
+</script>
+</body>
+</html>
