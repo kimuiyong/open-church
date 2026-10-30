@@ -104,7 +104,7 @@ footer{text-align:center;color:#9eb0c4;padding:25px 18px;border-top:1px solid #2
 <footer>열린강당 OPEN CHURCH · 누구나 존중받으며 머물 수 있는 열린 공간<br>AI가 생성한 설교는 목회자 또는 신학 전문가의 검토를 거칠 수 있도록 운영합니다.</footer>
 <script>
 const $=id=>document.getElementById(id);
-function enter(){ $('sanctuary').scrollIntoView({behavior:'smooth'}); }
+function enter(){ window.location.href='sanctuary.html'; }
 $('enter').onclick=enter;$('enter2').onclick=enter;$('exit').onclick=()=>$('enter').scrollIntoView({behavior:'smooth'});
 const templates=[
 {keys:['행복','의미','인생'],text:`사랑하는 여러분, 오늘은 인생의 의미와 행복을 함께 생각해 보겠습니다.\\n\\n누가복음 12장 15절은 사람의 생명이 소유의 넉넉함에 있지 않다고 가르칩니다. 이 말씀은 돈이나 성공이 중요하지 않다는 뜻이 아니라, 그것들이 우리 존재의 가치를 결정하지는 못한다는 뜻입니다.\\n\\n행복은 모든 문제가 사라진 뒤에만 찾아오는 것이 아닙니다. 오늘 곁에 있는 사람에게 따뜻한 말을 건네고, 작은 일에 감사하며, 넘어졌을 때 다시 한 걸음 내딛는 데서 자라납니다.\\n\\n오늘 자신에게 물어보십시오. 내가 더 많이 가지려 애쓰는 동안 놓치고 있는 소중한 것은 무엇입니까? 오늘 사랑을 표현할 한 사람은 누구입니까?\\n\\n마태복음 6장 34절의 가르침처럼 아직 오지 않은 내일의 걱정에 오늘을 모두 내어주지 맙시다. 오늘 할 수 있는 선한 일을 선택합시다.\\n\\n기도합니다. 하나님, 우리의 마음에 지혜와 평안을 주시고, 소유보다 사랑을, 비교보다 감사를, 포기보다 소망을 선택하게 하소서. 아멘.`},
